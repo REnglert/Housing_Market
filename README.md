@@ -64,17 +64,17 @@ Figure 2: Sorted Housing Price Clusters
 
 Referring to Figure 2, these represent different tiers (clusters) of housing prices with their own respective centroid and variance. We can clearly see the middle tier (blue) is the most stable as the standard deviations from the centroid of the cluster are barely visible compared to the magnitude of the variances of the lower and upper clusters. And the approximate threshold for each cluster's normalized MEDV range as represented by the horizontal bars. This may be due to the larger number of members that were classified as middle tier (almost twice as many members as in lower or upper).
 
-![Figure 3](images/Figure3.png)
+![Figure 3](images/Figure3.PNG)
 Figure 3: Test Data Accuracy Results For Logistic Regression Methods
 
 Using these housing pricing classifications, we can use these memberships as labels for our logistic regression in order to determine how much each individual parameter impact housing tier membership. Referring to Figure 3, we can see the final accuracy results of running our logistic regression algorithms on our data with our custom labels derived from our GMM.
 
-![lrc](images/Log_regresson_Error_convergence.png)
-![vlrc](images/variational_log_regressioon_error_convergence.png)
+![lrc](images/Log_regresson_Error_convergence.PNG)
+![vlrc](images/variational_log_regressioon_error_convergence.PNG)
 
 There is not much to distinguish here other than the variational method's lacking in accuracy in the middle tier case. However, the overall mean accuracy of all three methods are roughly the same. However, it's important to note that the team's implemented methods, on average, performed just as well as the Sklearn library's logistic regression.
 
-![linear regression](images/linear_regression.png)
+![linear regression](images/linear_regression.PNG)
 
 However, accuracy is not the only result we should be looking at. Referring to Figures 4,5, we can see the rate of convergence between the team's implemented Raphsen-Newton Logistic Regression and Variational EM Logistic Regression. Here we can clearly see the superiority, in this test case, of a variational EM method over a more classical approach as we converge very rapidly with a clear 2nd order convergence rate. However in contrast, the Logistic Regression with Raphsen-Newton updates convergence rates are wildly deviating until converge, especially in the upper tier case. This is not at all like the variational method with a clear and smooth convergence.
 
